@@ -1,22 +1,89 @@
-<h1>Hosted By Akshay</h1>
+<p>website hosted on firebase</p>
 
+<div class="chatbox">
+  <div class="chatbox__button" (click)="toggleChatbox()">
 
-<div class="chatbox-container" [class.open]="isOpen">
-  <div class="chatbox-icon" (click)="toggleChatbox()">
-    <span class="icon">💬</span>
+    <div *ngIf="!isChatboxOpen">
+
+      <svg width="70" height="70" viewBox="0 0 271 271" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="135.5" cy="135.5" r="135.5" [attr.fill]="colorLoad" />
+        <circle cx="136" cy="127" r="123" fill="white" />
+        <rect x="100.058" y="112.461" width="70.8775" height="25.2809" rx="12.6404" fill="black" />
+        <ellipse cx="155.042" cy="124.961" rx="4.64079" ry="4.63483" [attr.fill]="colorLoad" />
+        <ellipse cx="116.793" cy="124.961" rx="4.64079" ry="4.63483" [attr.fill]="colorLoad" />
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M179.656 107.062H179.362C176.778 84.7944 157.918 67.9965 135.5 67.9965C113.082 67.9965 94.2224 84.7944 91.6381 107.062H91.3438C77.7955 107.062 66.8125 118.046 66.8125 131.594C66.8125 145.142 77.7955 156.125 91.3438 156.125H101.156V111.969C101.156 93.0012 116.532 77.625 135.5 77.625C154.468 77.625 169.844 93.0012 169.844 111.969V161.031C169.837 170.295 163.353 178.292 154.291 180.215C151.581 170.711 142.228 164.705 132.459 166.195C122.689 167.685 115.552 176.207 115.799 186.086C116.046 195.965 123.6 204.12 133.432 205.12C143.263 206.12 152.305 199.654 154.536 190.027C168.923 187.894 179.595 175.575 179.656 161.031V156.125C193.204 156.125 204.188 145.142 204.188 131.594C204.188 118.046 193.204 107.062 179.656 107.062ZM76.625 131.594C76.625 123.465 83.2148 116.875 91.3438 116.875V146.313C83.2148 146.313 76.625 139.723 76.625 131.594ZM135.5 195.375C130.081 195.375 125.688 190.982 125.688 185.563C125.688 180.143 130.081 175.75 135.5 175.75C140.919 175.75 145.312 180.143 145.312 185.563C145.312 190.982 140.919 195.375 135.5 195.375ZM179.656 146.313V116.875C187.785 116.875 194.375 123.465 194.375 131.594C194.375 139.723 187.785 146.313 179.656 146.313Z"
+          fill="black" />
+      </svg>
+
+    </div>
+    <div *ngIf="isChatboxOpen">
+
+      <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 123 123" fill="none">
+        <circle cx="61.5" cy="61.5" r="61.5" [attr.fill]="colorLoad" />
+        <circle cx="61.727" cy="57.6421" r="55.8266" fill="white" />
+        <path d="M49.2083 73.7917L72.7916 50.2083" stroke="#333333" stroke-width="4" stroke-linecap="round"
+          stroke-linejoin="round" />
+        <path d="M72.7916 73.7917L49.2083 50.2083" stroke="#333333" stroke-width="4" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+
+    </div>
   </div>
-  <div class="chatbox-content" *ngIf="isOpen">
-    <div class="chatbox-header">
-      <span>Chat</span>
-      <button (click)="toggleChatbox()">✖</button>
-    </div>
-    <div class="chatbox-body">
-      <div class="messages">
-        <div class="message" *ngFor="let message of messages">{{ message }}</div>
+  <div class="chatbox__support" [ngClass]="{'active': isChatboxOpen}">
+    <div class="chatbox__header" id="configurable-heading">
+      <div>
+
+        <svg width="50" height="50" viewBox="0 0 271 271" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+          <rect x="100.058" y="112.461" width="70.8775" height="25.2809" rx="12.6404" fill="black" />
+          <ellipse cx="155.042" cy="124.961" rx="4.64079" ry="4.63483" [attr.fill]="colorLoad" />
+          <ellipse cx="116.793" cy="124.961" rx="4.64079" ry="4.63483" [attr.fill]="colorLoad" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M179.656 107.062H179.362C176.778 84.7944 157.918 67.9965 135.5 67.9965C113.082 67.9965 94.2224 84.7944 91.6381 107.062H91.3438C77.7955 107.062 66.8125 118.046 66.8125 131.594C66.8125 145.142 77.7955 156.125 91.3438 156.125H101.156V111.969C101.156 93.0012 116.532 77.625 135.5 77.625C154.468 77.625 169.844 93.0012 169.844 111.969V161.031C169.837 170.295 163.353 178.292 154.291 180.215C151.581 170.711 142.228 164.705 132.459 166.195C122.689 167.685 115.552 176.207 115.799 186.086C116.046 195.965 123.6 204.12 133.432 205.12C143.263 206.12 152.305 199.654 154.536 190.027C168.923 187.894 179.595 175.575 179.656 161.031V156.125C193.204 156.125 204.188 145.142 204.188 131.594C204.188 118.046 193.204 107.062 179.656 107.062ZM76.625 131.594C76.625 123.465 83.2148 116.875 91.3438 116.875V146.313C83.2148 146.313 76.625 139.723 76.625 131.594ZM135.5 195.375C130.081 195.375 125.688 190.982 125.688 185.563C125.688 180.143 130.081 175.75 135.5 175.75C140.919 175.75 145.312 180.143 145.312 185.563C145.312 190.982 140.919 195.375 135.5 195.375ZM179.656 146.313V116.875C187.785 116.875 194.375 123.465 194.375 131.594C194.375 139.723 187.785 146.313 179.656 146.313Z"
+            fill="black" />
+        </svg>
       </div>
+      <div class="chatbox-title">
+        <div id="configurable-heading chatbox-title2">CB Buddy</div>
+        <div id="chat-status">Online</div>
+
+
+      </div>
+      <div>
+
+      </div>
+      <button class="chatbox__close" (click)="toggleChatbox()">×</button>
+    </div>
+    <div class="chatbox__messages">
+      <div *ngFor="let msg of messages" class="chatbox__message"
+        [ngClass]="{'user-message': msg.type === 'user', 'reply-message': msg.type === 'reply'}"
+        [ngStyle]="{'background-color': msg.type === 'user' ? colorLoad : '#f1f1f1'}">
+        <div class="message-content">{{ msg.text }}</div>
+        <div class="message-time">{{ msg.time | date:'shortTime' }}</div>
+
+      </div>
+    </div>
+
+
+    <form class="chatbox__input" (ngSubmit)="sendMessage()" autocomplete="off">
       <div class="input-container">
-        <input [(ngModel)]="newMessage" (keyup.enter)="sendMessage()" placeholder="Type a message..." />
+        <input class="chatbot-msg-outer" type="text" [(ngModel)]="message" name="message"
+          placeholder="Type a message..." required aria-autocomplete="none" autocomplete="off" />
+        <button type="submit" class="send-button">
+
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 21 21" fill="none">
+            <path
+              d="M8.27497 3.8968L15.3512 7.43494C18.5256 9.02214 18.5256 11.6179 15.3512 13.2051L8.27497 16.7432C3.51337 19.124 1.57071 17.1731 3.95151 12.4197L4.67071 10.9896C4.85257 10.6259 4.85257 10.0224 4.67071 9.65867L3.95151 8.22027C1.57071 3.46694 3.52164 1.516 8.27497 3.8968Z"
+              [attr.stroke]="colorLoad" stroke-width="1.24" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M4.9104 10.32H9.3744" [attr.stroke]="colorLoad" stroke-width="1.24" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+
+        </button>
       </div>
-    </div>
+    </form>
+
   </div>
 </div>
